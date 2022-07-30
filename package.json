@@ -1,0 +1,40 @@
+{
+  "name": "@padcom/virtualcpu-common-vue-led",
+  "version": "0.0.0",
+  "author": "Matthias Hryniszak <padcom@gmail.com>",
+  "license": "Apache-2.0",
+  "keywords": [ "virtualcpu" ],
+  "type": "module",
+  "main": "dist/index.js",
+  "files": [ "dist" ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/padcom/virtualcpu-common-led"
+  },
+  "bugs": {
+    "url": "https://github.com/padcom/virtualcpu-common-led/issues"
+  },
+  "funding": {
+    "type": "patreon",
+    "url": "https://www.patreon.com/padcom"
+  },
+  "scripts": {
+    "start": "concurrently 'npm run build:watch' 'npm run serve' 'npm run dev'",
+    "dev": "vite .",
+    "build": "vite build --config vite-lib.config.js",
+    "build:watch": "npm run build -- -w",
+    "serve": "serve -p 3501 .",
+    "prepublishOnly": "npm install && npm run build"
+  },
+  "peerDependencies": {
+    "@padcom/virtualcpu-common-vue-timer": "^0.0.0",
+    "vue": "^3.2.37"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^3.0.0",
+    "concurrently": "^7.3.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "serve": "^14.0.1",
+    "vite": "^3.0.0"
+  }
+}
